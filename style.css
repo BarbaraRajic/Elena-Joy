@@ -35,8 +35,14 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: "Ruhl", sans-serif;
+  animation: opening 1s ease-in-out;
+}
+
 h1 {
   font-size: var(--header1);
+  font-family: "GV Regular", sans-serif;
 }
 
 h2 {
@@ -74,15 +80,6 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-body {
-  font-family: "Ruhl", sans-serif;
-  animation: opening 1s ease-in-out;
-}
-
-h1 {
-  font-family: "GV Regular", sans-serif;
 }
 
 /*Section INTRO*/
@@ -385,6 +382,9 @@ footer li:hover {
 
 @media screen and (max-width: 842px) {
   /*MAIN*/
+  .hidden {
+    display: none;
+  }
 
   .burger {
     position: relative;
@@ -406,20 +406,17 @@ footer li:hover {
   }
 
   .nav-links {
+    display: none;
     height: 100%;
     width: 100%;
     background: var(--background-color);
     position: absolute;
     z-index: 2;
     top: 0;
-    left: 100%;
+    right: 0;
+    overflow-x: hidden;
     flex-direction: column;
     align-items: center;
-    transition: transform 1s ease;
-  }
-
-  .nav-open {
-    transform: translateX(-100%);
   }
 
   .toggle .line1 {
